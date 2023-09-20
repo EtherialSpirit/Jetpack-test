@@ -21,6 +21,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -60,9 +62,25 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            ExtendedExample {
-
+            LazyColumn(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .fillMaxSize()
+                    ) {
+                itemsIndexed(
+                    listOf("Vasay", "Sany", "Piter", "Bob", "Lenny")
+                ) {index, iten ->
+                    Text(
+                        text = "Item $iten",
+                        fontSize = 20.sp,
+                        modifier = Modifier.padding(vertical = 10.dp)
+                    )
+                }
             }
+
+            // state
+            //ExtendedExample {}
+
             //RowColumn()
 //            Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
 //                ListItem(name = "Artem Bolotov", prof ="1C" )
@@ -86,11 +104,10 @@ class MainActivity : ComponentActivity() {
 //                ListItem(name = "Artem Bolotov", prof ="1C" )
 //                ListItem(name = "Artem Bolotov", prof ="1C" )
 
-            }
 
         }
     }
-
+}
 // Button states
 @Composable
 fun ExtendedExample(onClick: () -> Unit) {
