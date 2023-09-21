@@ -63,19 +63,55 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            LazyRow(
+            LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(Color.Green)
             ){
                 itemsIndexed(
                     listOf(
-                        ItemRowData(R.drawable.image, "Lily"),
-                        ItemRowData(R.drawable.image2, "Sany"),
-                        ItemRowData(R.drawable.image3, "Bob"),
-                        ItemRowData(R.drawable.image4, "Kolayn"),
-                        ItemRowData(R.drawable.image5, "Stasyan"),
-                        ItemRowData(R.drawable.image6, "Alsan"),
+                        ItemRowData(R.drawable.image, "Artem", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi " +
+                                "ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+                                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+                                "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui " +
+                                "officia deserunt mollit anim id est laborum."),
+                        ItemRowData(R.drawable.image2, "Mihail", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi " +
+                                "ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+                                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+                                "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui" +
+                                " officia deserunt mollit anim id est laborum."),
+                        ItemRowData(R.drawable.image3, "Duein", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+                                "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
+                                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi " +
+                                "ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
+                                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
+                                "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui " +
+                                "officia deserunt mollit anim id est laborum."),
+                        ItemRowData(R.drawable.image4, "Bob", "Lorem ipsum dolor sit amet, " +
+                                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore " +
+                                "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation " +
+                                "ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
+                                "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum " +
+                                "dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non " +
+                                "proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                        ItemRowData(R.drawable.image5, "Joe", "Lorem ipsum dolor sit amet, " +
+                                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et " +
+                                "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation " +
+                                "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure " +
+                                "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " +
+                                "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia " +
+                                "deserunt mollit anim id est laborum."),
+                        ItemRowData(R.drawable.image6, "Yill", "Lorem ipsum dolor sit amet, " +
+                                "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore " +
+                                "et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation " +
+                                "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor " +
+                                "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." +
+                                " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt " +
+                                "mollit anim id est laborum."),
                     )
                 ){_, item ->
                     RowCompos(item = item)
