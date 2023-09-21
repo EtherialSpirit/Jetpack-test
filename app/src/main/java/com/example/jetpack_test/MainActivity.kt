@@ -22,6 +22,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -62,21 +63,39 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
 
-            LazyColumn(
-                horizontalAlignment = Alignment.CenterHorizontally,
+            LazyRow(
                 modifier = Modifier
-                    .fillMaxSize()
-                    ) {
+                    .fillMaxWidth()
+                    .background(Color.Green)
+            ){
                 itemsIndexed(
-                    listOf("Vasay", "Sany", "Piter", "Bob", "Lenny")
-                ) {index, iten ->
-                    Text(
-                        text = "Item $iten",
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(vertical = 10.dp)
+                    listOf(
+                        ItemRowData(R.drawable.image, "Lily"),
+                        ItemRowData(R.drawable.image2, "Sany"),
+                        ItemRowData(R.drawable.image3, "Bob"),
+                        ItemRowData(R.drawable.image4, "Kolayn"),
+                        ItemRowData(R.drawable.image5, "Stasyan"),
+                        ItemRowData(R.drawable.image6, "Alsan"),
                     )
+                ){_, item ->
+                    RowCompos(item = item)
                 }
             }
+//            LazyColumn(
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//                modifier = Modifier
+//                    .fillMaxSize()
+//                    ) {
+//                itemsIndexed(
+//                    listOf("Vasay", "Sany", "Piter", "Bob", "Lenny")
+//                ) {index, iten ->
+//                    Text(
+//                        text = "Item $iten",
+//                        fontSize = 20.sp,
+//                        modifier = Modifier.padding(vertical = 10.dp)
+//                    )
+//                }
+//            }
 
             // state
             //ExtendedExample {}
